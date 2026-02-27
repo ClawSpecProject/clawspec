@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clawspec"
+version = "0.1.0"
+description = "Spec-driven code generation: write markdown specs, generate entire codebases"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.0",
+    "claude-agent-sdk",
+    "anyio>=4.0",
+    "gitpython>=3.1",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+clawspec = "clawspec.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clawspec"]
